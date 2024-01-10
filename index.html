@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevFinder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/36e8bee060.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body
+    class="font-dev bg-light-background dark:bg-dark-background text-light-text dark:text-dark-text grid items-center content-center min-h-[100dvh]"
+  >
+    <div class="max-w-[50em] w-[90%] mx-auto">
+      <header
+        class="flex mb-4 justify-between items-center text-light-heading dark:text-dark-heading"
+      >
+        <h1 class="text-2xl font-bold">DevFinder</h1>
+        <button
+          id="theme"
+          class="hover:text-light-text dark:hover:text-dark-text focus-visible:text-light-text dark:focus-visible:text-dark-text active:scale-95 focus-visible:outline-offset-8"
+        >
+          <div class="hidden dark:block">
+            <span class="uppercase font-semibold tracking-widest">Light</span>
+            <i class="fa-solid fa-sun"></i>
+          </div>
+          <div class="dark:hidden">
+            <span class="uppercase font-semibold tracking-widest">Dark</span>
+            <i class="fa-solid fa-moon"></i>
+          </div>
+        </button>
+      </header>
+
+      <section id="search" aria-label="search users">
+        <form
+          class="bg-light-widget dark:bg-dark-widget px-5 rounded-lg flex justify-between items-center gap-4 my-4"
+        >
+          <i
+            class="fa-brands fa-searchengin text-xl text-light-button dark:text-dark-button"
+          ></i>
+          <input
+            type="text"
+            placeholder="Search GitHub Username..."
+            class="bg-transparent py-5 px-2 w-full"
+          />
+          <button
+            type="submit"
+            id="search-btn"
+            class="w-[max-content] bg-light-button dark:bg-dark-button hover:opacity-90 focus-visible:opacity-90 transition-opacity duration-500 text-dark-heading rounded-lg py-2 px-4 active:scale-95 focus-visible:outline-offset-4 disabled:opacity-50"
+          >
+            <i class="fa fa-spinner fa-spin hidden"></i>
+            <span id="search-span">Search</span>
+          </button>
+        </form>
+      </section>
+
+      <main
+        class="bg-light-widget dark:bg-dark-widget p-5 lg:p-8 rounded-lg grid gap-[1em_2em] xl:gap-[0em_2em] grid-cols-4 items-center"
+      >
+        <div
+          class="aspect-square overflow-hidden rounded-full ring-2 ring-light-button dark:ring-dark-button"
+        >
+          <img src="./src/assets/octocat.png" alt="github avatar" />
+        </div>
+        <div class="col-start-2 col-end-5">
+          <h2
+            aria-label="full name"
+            class="text-xl font-bold text-light-heading dark:text-dark-heading md:mb-1"
+          >
+            The Octocat
+          </h2>
+          <p
+            aria-label="nickname"
+            class="text-light-button dark:text-dark-button opacity-90 md:mb-2"
+          >
+            @<span>octocat</span>
+          </p>
+          <p id="date">Joined <span>Jan 25, 2011</span></p>
+        </div>
+        <div class="col-start-1 col-end-5 xl:col-start-2">
+          <p aria-label="bio" class="leading-[1.8] mb-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus,
+            doloremque commodi? Placeat, perspiciatis eveniet?
+          </p>
+          <ul
+            role="list"
+            aria-label="stats"
+            class="mb-4 bg-light-background dark:bg-dark-background p-5 rounded-lg flex items-center justify-around gap-4 *:flex *:items-center *:justify-between *:flex-col-reverse *:gap-2"
+          >
+            <li>
+              <span
+                class="font-extrabold text-2xl text-light-heading dark:text-dark-heading"
+                >8</span
+              >
+              <span class="font-semibold">Repos</span>
+            </li>
+            <li>
+              <span
+                class="font-extrabold text-2xl text-light-heading dark:text-dark-heading"
+                >3938</span
+              >
+              <span class="font-semibold">Followers</span>
+            </li>
+            <li>
+              <span
+                class="font-extrabold text-2xl text-light-heading dark:text-dark-heading"
+                >9</span
+              >
+              <span class="font-semibold">Following</span>
+            </li>
+          </ul>
+          <ul role="list" aria-label="other info">
+            <li aria-label="location" class="mb-2">
+              <i
+                class="fa-solid fa-location-dot text-light-heading dark:text-dark-heading"
+              ></i>
+              <span>San Francisco</span>
+            </li>
+            <li aria-label="github url" class="mb-2">
+              <i
+                class="fa-solid fa-link text-light-heading dark:text-dark-heading"
+              ></i>
+              <span>https://github.blog</span>
+            </li>
+            <li aria-label="x username" class="mb-2 opacity-50">
+              <i
+                class="fa-brands fa-square-x-twitter text-light-heading dark:text-dark-heading"
+              ></i>
+              <span>Not Available</span>
+            </li>
+            <li aria-label="company">
+              <i
+                class="fa-solid fa-building text-light-heading dark:text-dark-heading"
+              ></i>
+              <span>@github</span>
+            </li>
+          </ul>
+        </div>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
